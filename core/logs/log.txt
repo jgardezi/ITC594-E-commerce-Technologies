@@ -1,0 +1,23 @@
+2009-01-02 14:54:31 | Logs Cleared: by User ID 1
+2009-01-03 13:18:46 | Login: kskoglund logged in.
+2009-01-03 13:32:39 | Login: kskoglund logged in.
+2009-01-04 12:16:00 | Login: kskoglund logged in.
+2009-01-04 13:43:01 | Login: kskoglund logged in.
+2012-05-15 10:35:30 | Login: admin logged in.
+2012-05-15 12:13:58 | Login: admin logged in.
+2012-05-15 14:01:48 | Login: admin logged in.
+2012-05-15 14:29:58 | Login: admin logged in.
+2012-05-15 14:57:47 | Login: javed logged in.
+2012-05-15 14:58:57 | Login: javed logged in.
+2012-05-15 14:59:54 | Login: admin logged in.
+2012-05-15 16:42:53 | Login: admin logged in.
+2012-05-16 07:43:37 | Login: admin logged in.
+2012-05-16 09:09:56 | Login: admin logged in.
+2012-05-16 09:11:31 | Login: admin logged in.
+2012-05-17 11:42:03 | Login: admin logged in.
+2012-05-20 03:08:11 | Login: admin logged in.
+2012-05-20 05:59:30 | Login: admin logged in.
+2012-05-25 07:57:35 | Login: admin logged in.
+2012-05-25 11:06:08 | Login: admin logged in.
+2012-05-25 17:37:19 | Login: admin logged in.
+2012-05-26 01:13:16 | Login: admin logged in.
