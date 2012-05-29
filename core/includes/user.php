@@ -47,7 +47,7 @@ class User extends DatabaseObject {
         $result_array = self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE user_id={$id} LIMIT 1");
         return !empty($result_array) ? array_shift($result_array) : false;
     }
-
+    
     public static function find_by_sql($sql = "") {
         global $database;
         $result_set = $database->query($sql);

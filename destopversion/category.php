@@ -4,7 +4,7 @@
 //echo "Session: " . $session->is_logged_in() . "<br />";
 
 if (isset($_GET['id']))
-    $category_id = mysql_escape_string($_GET['id']);
+    $category_id = mysql_real_escape_string($_GET['id']);
 
 $categories = new Category();
 $category = $categories->find_by_id($category_id);
