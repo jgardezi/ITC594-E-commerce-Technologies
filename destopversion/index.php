@@ -11,7 +11,7 @@ $categories = $cat->find_all();
 <?php include 'layouts/nav.php'; ?>
 <?php
 
-if (is_null($categories)) :
+if (empty($categories)) :
     echo 'No categories defined yet.';
 else :
     echo '<table border="1">

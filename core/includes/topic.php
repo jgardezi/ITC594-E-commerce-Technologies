@@ -25,6 +25,15 @@ class Topic extends DatabaseObject {
         return !empty($result_array) ? array_shift($result_array) : false;
     }
     
+    public static function find_by_cat_id($id = 0) {
+        global $database;
+        $result_set = $database->query("SELECT * FROM " . self::$table_name . " WHERE topic_cat={$id}");
+        $object_array = array();
+        while ($row = $database->fetch_array($result_set)) {
+            $object_array[] = self::instantiate($row);
+        }
+        return $object_array;
+    }
     
     public static function find_by_sql($sql = "") {
         global $database;

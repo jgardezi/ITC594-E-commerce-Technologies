@@ -3,49 +3,47 @@
 
 //echo "Session: " . $session->is_logged_in() . "<br />";
 
-$cat = new Category();
-$categories = $cat->find_all();
+if (isset($_GET['id']))
+    $category_id = mysql_escape_string($_GET['id']);
+
+$categories = new Category();
+$category = $categories->find_by_id($category_id);
+
+$topic = new Topic();
+$topics = $topic->find_by_cat_id($category_id);
+echo "<pre>";
+//print_r($category);
+//print_r($topics);
+echo "</pre>";
 ?>
 
 <?php include 'layouts/header.php'; ?>
 <?php include 'layouts/nav.php'; ?>
 <?php
 
-if (is_null($categories)) :
-    echo 'No categories defined yet.';
+if (empty($topics)) :
+    echo 'There are no topics in this category yet.';
 else :
+    echo '<h2>Topics in &prime;' . $category->cat_name . '&prime; category</h2><br />';
     echo '<table border="1">
 	  <tr>
-            <th>Category</th>
-            <th>Last topic</th>
+            <th>Topic</th>
+            <th>Created at</th>
 	  </tr>';
-    foreach($categories as $category => $value):
+
+    foreach ($topics as $topic => $value):
         //print_r($category);
         echo "<tr>";
             echo '<td class="leftpart">';
-                echo '<h3><a href="category.php?id=' . $value->cat_id . '">' . $value->cat_name . '</a></h3>' . $value->cat_description;
+                echo '<h3><a href="topic.php?id=' . $value->topic_id . '">' . $value->topic_name . '</a></h3>';
             echo '</td>';
-            $sql = "SELECT
-                        t.topic_id,
-                        t.topic_name,
-                        t.topic_date,
-                        t.topic_cat
-                    from topics AS t
-                    where t.topic_cat = {$value->cat_id}
-                        ORDER BY t.topic_id DESC
-                        LIMIT 1";
-                    $topic = new Topic();
-                    $topics = $topic->find_by_sql($sql);
-                echo '<td class="rightpart">';
-                    if( !empty($topics) ):
-                        echo '<a href="topic.php?id=' . $topics[0]->topic_id . '">' . $topics[0]->topic_name . '</a> at ' . date('d-m-Y', strtotime($topics[0]->topic_date));
-                    else:
-                        echo 'no topics';
-                    endif;
-                echo '</td>';
+            echo '<td class="rightpart">';
+                echo date('d-m-Y', strtotime($value->topic_date));
+            echo '</td>';
             
         echo "</tr>";
     endforeach;
+
     echo '</table>';
 endif;
 
