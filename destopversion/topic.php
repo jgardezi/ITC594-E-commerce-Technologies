@@ -79,8 +79,8 @@ if (isset($_GET['id'])):
         endif;
         echo '<div>
             <h2>Reply:</h2>
-            <form method="post" action="topic.php?id=' . $topic_id . '">
-                <textarea placeholder="Write your reply here..." name="reply-content" required></textarea><br /><br />
+            <form id="markItUp" method="post" action="topic.php?id=' . $topic_id . '">
+                <textarea class="inputTA" cols="55" rows="10" placeholder="Write your reply here..." name="reply-content" required></textarea><br /><br />
                 <input type="hidden" name="topicid" value="' . $topic_id . '" />
                 <input type="submit" name="submitreply" value="Submit Reply" />
             </form>
@@ -92,5 +92,8 @@ if (isset($_GET['id'])):
         echo '<p>You must be <a href="signin.php">signed in</a> to view the topic. You can also <a href="signup.php">sign up</a> for an account.</p>';
     endif;
     ?>
+<script type="text/javascript" src="../destopversion/javascripts/markitup/markitup/jquery.markitup.js"></script>
+    <script type="text/javascript" src="../destopversion/javascripts/markitup/markitup/sets/default/set.js"></script>
+    
     <?php include 'layouts/footer.php'; ?>
 <?php endif; ?>
