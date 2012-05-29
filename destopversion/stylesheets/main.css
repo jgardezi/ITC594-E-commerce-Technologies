@@ -142,3 +142,13 @@ form#signupforum input.inputText:HOVER, form#signupforum textarea.inputTA:hover 
     font-weight: bold;
     color: #8D0D19;
 }
+
+
+.post-content {
+	padding: 10px;
+}
+
+textarea {
+    height: 200px;
+    width: 500px;
+}

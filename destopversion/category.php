@@ -11,10 +11,7 @@ $category = $categories->find_by_id($category_id);
 
 $topic = new Topic();
 $topics = $topic->find_by_cat_id($category_id);
-echo "<pre>";
-//print_r($category);
-//print_r($topics);
-echo "</pre>";
+
 ?>
 
 <?php include 'layouts/header.php'; ?>
